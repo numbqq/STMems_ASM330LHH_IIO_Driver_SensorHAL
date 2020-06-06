@@ -22,7 +22,7 @@
 static const char *device_iio_dir = "/sys/bus/iio/devices/";
 static const char *device_iio_sfa_filename = "sampling_frequency_available";
 static const char *device_iio_sf_filename = "sampling_frequency";
-static const char *device_iio_hw_fifo_enabled = "hwfifo_enabled";
+//static const char *device_iio_hw_fifo_enabled = "hwfifo_enabled";
 static const char *device_iio_hw_fifo_length = "hwfifo_watermark_max";
 static const char *device_iio_hw_fifo_watermark = "hwfifo_watermark";
 static const char *device_iio_hw_fifo_flush = "hwfifo_flush";
@@ -296,13 +296,13 @@ int device_iio_utils::get_fifo_length(const char *device_dir)
 	if (ret < 0)
 		return ret;
 
-	/* write "1" -> <iio:devicex>/hwfifo_enabled */
-	ret = snprintf(tmp_filaname, DEVICE_IIO_MAX_FILENAME_LEN,
-		       "%s/%s", device_dir, device_iio_hw_fifo_enabled);
-	if (ret < 0)
-		return -ENOMEM;
-
-	ret = sysfs_write_int(tmp_filaname, 1);
+//	/* write "1" -> <iio:devicex>/hwfifo_enabled */
+//	ret = snprintf(tmp_filaname, DEVICE_IIO_MAX_FILENAME_LEN,
+//		       "%s/%s", device_dir, device_iio_hw_fifo_enabled);
+//	if (ret < 0)
+//		return -ENOMEM;
+//
+//	ret = sysfs_write_int(tmp_filaname, 1);
 
 	return ret < 0 ? ret : len;
 }
