@@ -73,6 +73,7 @@ static int sensor_num;
 
 /* Path to SensorHAL in target filesystem */
 static const char *hal_paths[] = {
+	"/usr/lib/SensorHAL.so",
 	"/tmp/mnt/SensorHAL.so",
 	"/system/vendor/lib64/hw/SensorHAL.so",
 	"/system/vendor/lib/hw/SensorHAL.so",
