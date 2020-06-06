@@ -25,7 +25,7 @@
 #include <hardware/sensors.h>
 
 #ifndef LOG_TAG
-#define LOG_TAG "test_linux"
+#define LOG_TAG "asm330lhh_test"
 #endif
 
 #ifdef ANDROID_LOG

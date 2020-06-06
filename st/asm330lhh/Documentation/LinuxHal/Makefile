@@ -19,20 +19,20 @@ IDIR = -I. -I../../linux/
 
 CC=$(CROSS_COMPILE)gcc
 LD=$(CROSS_COMPILE)gcc
-CFLAGS=$(IDIR) -DLOG_TAG=\"test_linux\"
+CFLAGS=$(IDIR) -DLOG_TAG=\"asm330lhh_test\"
 LIB=-ldl -lpthread
 
-.PHONY: test_linux
+.PHONY: asm330lhh_test
 
-all: test_linux
+all: asm330lhh_test
 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-test_linux: test_linux.o
+asm330lhh_test: test_linux.o
 	$(CC) -o $@ $^ $(CFLAGS) $(LIB)
 
 clean:
-	rm -f *.o test_linux
+	rm -f *.o test_linux asm330lhh_test
